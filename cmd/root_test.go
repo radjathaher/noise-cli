@@ -50,6 +50,13 @@ func TestClassifyUsageError(t *testing.T) {
 	}
 }
 
+func TestClassifyMissingCredentials(t *testing.T) {
+	exit, code := classifyError(errors.New("NOISE_ORG and NOISE_API_KEY are required"))
+	if exit != 3 || code != "authentication_error" {
+		t.Fatalf("classification = (%d, %q)", exit, code)
+	}
+}
+
 func TestRedactedURLDropsCredentialsAndQuery(t *testing.T) {
 	got := redactedURL("https://user:secret@example.com/mcp?token=secret")
 	if got != "https://example.com/mcp" {

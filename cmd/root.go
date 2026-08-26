@@ -100,6 +100,9 @@ func classifyError(err error) (int, string) {
 	}
 	message := strings.ToLower(err.Error())
 	switch {
+	case strings.Contains(message, "noise_org"), strings.Contains(message, "noise_api_key"),
+		strings.Contains(message, "noise_mcp_client_id"), strings.Contains(message, "credentials"):
+		return 3, "authentication_error"
 	case strings.Contains(message, "required"), strings.Contains(message, "invalid argument"),
 		strings.Contains(message, "unknown command"), strings.Contains(message, "unknown flag"):
 		return 2, "usage_error"
