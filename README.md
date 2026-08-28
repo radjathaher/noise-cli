@@ -4,6 +4,12 @@
 public reporting data through REST. It uses Noise MCP tools for detailed reads
 and management actions.
 
+Documentation:
+
+- [REST, CLI, and MCP capability matrix](docs/noise-capability-matrix.md)
+- [Codex, Claude, and Hermes MCP + skill setup](docs/mcp-and-skill-setup.md)
+- [Noise campaign operator skill](skills/noise-campaign-operator/SKILL.md)
+
 ```text
                          ┌─────────────────────────────┐
                          │            noise            │

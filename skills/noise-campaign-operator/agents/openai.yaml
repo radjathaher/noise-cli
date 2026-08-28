@@ -1,0 +1,11 @@
+interface:
+  display_name: "Noise Campaign Operator"
+  short_description: "Operate Noise campaigns and playbooks safely"
+  default_prompt: "Use $noise-campaign-operator to inspect my Noise campaign and preview the safest next change."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "noise"
+      description: "Noise reporting and campaign-management MCP server"
+      transport: "streamable_http"
+      url: "https://reporting.getnoise.com/mcp"
